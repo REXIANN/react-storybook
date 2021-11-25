@@ -63,7 +63,18 @@ Red.args = {
 이렇게 설정을 해 주었다면 스토리북의 Controls 패널에서 Control 컬럼을 이용해 각 args 를 조정할 수 있음을 볼 수 있다.
 또한 버튼을 클릭할 경우 Actions 패널에서 onClick 에 해당하는 이벤트가 발생함을 볼 수 있다.
 
-### argTypes
-하지만 Button.js에 Props로 넘어오는 onClick 을 handleClick 으로 바꾼다면 스토리북은 해당 함수가 어떤 것인지 알지 못한다. 
-이를 위해 반환되는 스토리 오브젝트에 argTypes를 다음과 같이 추가해주어야 한다.
+이제 Template 에 기반한 다양한 스토리를 만들 수 있다.
+Controls 패널에서 Name 의 오른쪽에 있는 버튼을 누르면 초기값으로 리셋되니 부담없이 값을 변경해 볼 수 있다.
 
+### argTypes
+하지만 Button.js에 Props 로 넘어오는 onClick 을 handleClick 으로 바꾼다면 스토리북은 해당 함수가 어떤 것인지 알지 못한다. 
+이를 위해 반환되는 스토리 오브젝트에 argTypes 를 다음과 같이 추가해주어야 한다.
+```javascript
+export default {
+  title: "Button",
+  component: Button,
+  argTypes: { handleClick: { action: "handleClick" } }
+}
+```
+
+저 말은 handleClick 이 실행되면 action 패널에 handleClick 이라는 이름으로 해당 이벤트를 표시해라 라는 의미이다.
