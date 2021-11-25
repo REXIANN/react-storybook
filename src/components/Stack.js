@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-function Stack({ children, spacing = 2, direction = "row", warp = false }) {
+function Stack({ children, spacing = 2, direction = "row", wrap = false }) {
   const style  = {
     display: "flex",
     gap: `${spacing * 0.5}rem`,

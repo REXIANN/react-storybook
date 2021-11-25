@@ -78,3 +78,19 @@ export default {
 ```
 
 저 말은 handleClick 이 실행되면 action 패널에 handleClick 이라는 이름으로 해당 이벤트를 표시해라 라는 의미이다.
+
+## Advanced
+스토리북을 여러개로 실행할 경우 title 에 `/` 을 사용하여 구조화할 수 있다.
+
+argTypes 는 스토리북에서만 필요한 변수를 추가적으로 생성해서 전달해 줄 수 있다. 이 경우 해당 변수의 타입과 기본값을 설정해주어야 한다.
+```javascript
+export default {
+  title: "Components/Stack",
+  component: Stack,
+  argTypes: {
+    numberOfChildren: { type: "number", defaultValue: 4 }
+  }
+}
+
+const Template = ({ numberOfChildren, ...args }) => ...
+```
