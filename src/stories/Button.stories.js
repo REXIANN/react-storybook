@@ -5,5 +5,12 @@ export default {
   component: Button,
 }
 
-export const Red = () => <Button label="Press me" backgroundColor="red" />
-// 기본적으로 Button 컴포넌트에 대한 스토리이며 그 안에 Red 라는 이름을 가지는 항목을 가진다
+const Template = args => <Button {...args} />
+
+export const Red = Template.bind({})
+
+Red.args = {
+  backgroundColor: "red",
+  label: "Press Me",
+  size: "md"
+}
