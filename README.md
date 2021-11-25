@@ -19,3 +19,12 @@ npm run storybook
 ```
 
 기본적으로 stories 폴더 안에 있는 것들을 전부 실행시킨다. 다른 폴더도 실행하게 할 수 있지만 그렇게 하지 않는 것을 권장한다고 한다.
+
+## Storybook
+스토리북은 기본적으로 *.stories.@(js|jsx|ts|tsx) 형태의 파일이 되어야 한다.
+하나의 스토리북 파일은 기본적으로 하나의 오브젝트를 반환해야 하는데(`export default {}`)이 오브젝트가 실제 스토리가 된다.
+보통은 title, component 등의 인자를 가진다.
+
+스토리북의 Controls 패널에 있는 Description의 정보는 기본적으로 PropTypes에서 가져온다. 
+TS를 사용하는경우 스토리북은 TS의 타입정보를 가져다가 사용할 수도 있을 정도로 똑똑함.
+ 
